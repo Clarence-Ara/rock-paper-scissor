@@ -36,3 +36,46 @@ function getHumanChoice() {
 // Players Score
 let humanScore = 0;
 let computerScore = 0;
+
+
+// Single Round
+function playRound(humanChoice, computerChoice) {
+    if (humanChoice === "Rock") {
+        if (computerChoice === "Paper") {
+            computerScore++;
+            console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
+        } else if (computerChoice === "Scissor") {
+            humanScore++;
+            console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+        } else {
+            console.log("Draw");
+        }
+    } else if (humanChoice === "Paper") {
+        if (computerChoice === "Rock") {
+            humanScore++;
+            console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+        } else if (computerChoice === "Scissor") {
+            computerScore++;
+            console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
+        } else {
+            console.log("Draw");
+        }
+    } else if (humanChoice === "Scissor") {
+        if (computerChoice === "Paper") {
+            humanScore++;
+            console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+        } else if (humanChoice === "Rock") {
+            computerScore++;
+            console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
+        } else {
+            console.log("Draw");
+        }
+    } else {
+        console.log("Invalid game");
+    }
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
